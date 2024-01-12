@@ -28,12 +28,13 @@
 ### 1. Thu thập dữ liệu
 
 - Nguồn dữ liệu thu thập từ trang web [Kaggle](https://www.kaggle.com/datasets/catherinerasgaitis/mxmh-survey-results)
-  -Trong phần này, nhóm sử dụng chọn bộ dữ liệu Music & Mental Health Survey Results. Một bộ dữ liệu khảo sát dựa trên sở thích âm nhạc và tự đánh giá sức khỏe tinh thần của người tham gia.
 
-  1.1. Truy cập bộ dữ liệu
+  - Trong phần này, nhóm sử dụng chọn bộ dữ liệu Music & Mental Health Survey Results. Một bộ dữ liệu khảo sát dựa trên sở thích âm nhạc và tự đánh giá sức khỏe tinh thần của người tham gia.
 
-- Format link: `https://www.kaggle.com/datasets/catherinerasgaitis/mxmh-survey-results`
+- Link: `https://www.kaggle.com/datasets/catherinerasgaitis/mxmh-survey-results`
 - Nhóm tải bộ dữ liệu về và thu được một bộ dữ liệu gồm 736 mẫu với 33 cột thuộc tính.
+
+![Info](images/1.0-Info.png)
 
 ### 2. Tiền xử lý dữ liệu
 
@@ -92,6 +93,16 @@
 - Sau khi xử lí outlier nhóm thu được bộ dữ liệu hoàn chỉnh với 666 mẫu và 31 cột
 
 ![Outlier2](images/2.0-Outlier2.png)
+
+#### Sau khi tiến hành tiền xử lí dữ liệu nhóm thu được bộ dữ liệu như sau
+
+- Xét các cột dữ liệu số
+
+  ![Describe](images/2.0-Describe.png)
+
+- Xét các cột dữ liệu phân loại
+
+  ![Describe2](images/2.0-Decribe2.png)
 
 ### 3. Khám phá dữ liệu
 
