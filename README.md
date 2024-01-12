@@ -20,6 +20,7 @@
     - 2.0-data-preprocessing.ipynb: file tiền xử lý dữ liệu
     - 3.0-data_explorating.ipynb: file khám phá dữ liệu
     - 4.0-questions-and-answers.ipynb: file đặt câu hỏi và trả lời
+    - 5.0-member-reflection.ipynb: file tự nhận xét
   - `images`: chứa các hình ảnh minh họa
   - `README.md`: file hướng dẫn sử dụng
 
@@ -55,9 +56,9 @@
 
   2.2. Xử lý dữ liệu theo cột
 
-- Chuẩn hóa dữ liệu của các cột về đúng với kiểu dữ liệu mong muốn. Vì các kiểu dữ liệu của các cột đã đúng với kiểu dữ liệu mong muốn của nhóm nên nhóm sẽ không xử lí thêm phần này.
+- Nhóm sẽ tiến hành đưa các cột điểm đánh giá mức độ nghiêm trọng của các triệu chứng, số giờ nghe nhạc về kiểu int.
 
-=> Cuối cùng kiểm tra dữ liệu trùng lặp và xóa nó đi.
+=> Sau đó kiểm tra dữ liệu trùng lặp và xóa nó đi.
 
 2.3. Xử lý dữ liệu nhiễu và thiếu
 
@@ -82,11 +83,7 @@
 
 - Xử lý nhiễu (noise) trong dữ liệu là một phần quan trọng của quá trình tiền xử lý trong khoa học dữ liệu. Nhiễu có thể làm giảm chất lượng dữ liệu để phân tích và đánh giá, vì vậy việc xác định và xử lý nhiễu là cần thiết.
 
-- Những ký thuật tìm ra và xử lý nhiễu có thể là :
-
-  - Sử dụng IQR để tìm ra các giá trị outlier của cột BPM
-
-- Ở phần này nhóm em sẽ chủ yếu xử lí trên hai cột là `'BPM'` và `'Hours per day'`
+- Ở phần này nhóm em sẽ sử dụng IQR để chủ yếu xử lí trên hai cột là `'BPM'` và `'Hours per day'`
 
 ![Outlier](images/2.0-Outlier.png)
 
@@ -106,11 +103,9 @@
 
 ### 3. Khám phá dữ liệu
 
-Nhóm sẽ thống kê theo từng cột để xem đặc trưng của cột đồng thời cũng xem xét đến các mối tương quan của các cột đó
+Nhóm thống kê dữ liệu theo từng cột, để tìm ra đặc trưng của cột đó, đồng thời xem xét các mối tương quan giữa các cột dữ liệu để có những cái nhìn trực quan nhất, và hiểu rõ nhất về dữ liệu.
 
 #### 3.1 Thống kê về tuổi
-
-Nhóm vẽ hai biểu đồ cột và boxplot để có cái nhìn trực quan nhất về độ tuổi của các đáp viên
 
 <div>
 <style scoped>
@@ -171,13 +166,15 @@ Nhóm vẽ hai biểu đồ cột và boxplot để có cái nhìn trực quan n
 </table>
 </div>
 
+Nhóm vẽ hai biểu đồ cột và boxplot để có cái nhìn trực quan nhất về độ tuổi của các đáp viên
+
 ![Age1](images/3.0-1-age-distribution.png)
 
 ![Age2](images/3.0-1-age-boxplot.png)
 
-- Dựa vào biểu đồ boxplot và histogram. Chúng ta có thể thấy đa phần độ tuổi tham gia khảo sát đều ở độ tuổi từ 15 đến 23 tuổi.
+- Dựa vào biểu đồ boxplot và countplot. Chúng ta có thể thấy đa phần độ tuổi tham gia khảo sát đều ở độ tuổi từ 18 đến 28 tuổi.
 - Độ tuổi thấp nhất tham gia khảo sát là 10 tuổi và cao nhất là 80 tuổi.
-- Độ tuôi trung bình tham gia khảo sát là 25 tuổi.
+- Độ tuổi trung bình tham gia khảo sát là 25 tuổi.
 
 #### 3.2 Thống kê về dịch vụ nghe nhạc
 
@@ -414,9 +411,9 @@ Nhóm vẽ hai biểu đồ cột và boxplot để có cái nhìn trực quan n
 
 ![favgenres3](images/3.0-4-genre-bpm.png)
 
-- BPM của thể loại EDM và Mental ở mức khá cao và cao nhất trong các thể loại nhạc
-- Thể loại Gospel có mức BPM trải khá , chứa cả mức BPM thấp nhất
-- Mức BPM trung bình thấp nhất là của thể loại Country
+- BPM của thể loại EDM và Mental ở mức khá cao và cao nhất trong các thể loại nhạc.
+- Mức BPM của Latin rất thấp, chênh lệch hoàn toàn so với phần còn lại, nhưng vì dữ liệu về thể loại Latin chỉ có 1 nên chúng ta sẽ tạm thời bỏ qua dòng nhạc này.
+- Mức BPM trung bình thấp nhất là của thể loại Country.
 
 #### 3.5 Khám phá các cột Yes/No
 
@@ -471,7 +468,7 @@ Nhóm vẽ hai biểu đồ cột và boxplot để có cái nhìn trực quan n
 
 - Hơn 78% người tham gia khảo sát nghe nhạc lúc đang làm việc
 - Hầu hết mọi người chưa bao giờ sáng tạc nhạc, với hơn 83% chọn No
-- Hơn 67% đã từng chơi nhạc cụ gần đây
+- Khoảng 32% đã từng chơi nhạc cụ gần đây
 - Khoảng 70% mọi người có xu hướng khám phá thêm các tác giả và thể loại nhạc mới
 - Số lượng người có nghe nhạc nước ngoài tương đương với người không nghe, 46 so với 54%
 
@@ -544,7 +541,7 @@ Nhóm vẽ hai biểu đồ cột và boxplot để có cái nhìn trực quan n
 
 ![frequency](images/3.0-6-genre-frequency.png)
 
-- Nhạc Rock là nhạc có số lượng nghe thường xuyên nhiều nhất, ít nhấy là Gospel
+- Nhạc Rock là nhạc có số lượng nghe thường xuyên nhiều nhất, ít nhất là Gospel
 - Nhạc Gospel là nhạc có số người chưa bao giờ nghe là nhiều nhất, với nhạc Pop thì hầu như là ai cũng đã từng nghe
 
 #### 3.7 Việc nghe nhạc có cải thiện sức khoẻ tinh thần không ?
@@ -969,7 +966,7 @@ Biểu đồ Venn cho thấy có sự chồng chéo đáng kể giữa các tìn
 
 <div style="border-radius: 10px; border: 2px solid #51F9F4; padding: 15px; background-color:#c2eeec; font-size: 100%; text-align: left;">
     
-<font size="+1" color=#215C67><b>Câu hỏi 2. Câu 2: Phân tích những lựa chọn, sở thích nghe nhạc của những người tham gia khảo sát khi các triệu chứng tinh thần diễn ra thường xuyên hơn (> 5 ở thang 10) có gì thay đổi hay không?
+<font size="+1" color=#215C67><b>Câu hỏi 2: Phân tích những lựa chọn, sở thích nghe nhạc của những người tham gia khảo sát khi các triệu chứng tinh thần diễn ra thường xuyên hơn (> 5 ở thang 10) có gì thay đổi hay không?
 </b></font>
 
 <font color="red"><b>Câu hỏi có lợi ích gì: </b></font> <font color="red">Việc phân tích những yếu tố tác động đến sức khỏe tinh thân giúp chúng ta có cái nhìn chi tiết hơn về vấn để tinh thần của mọi người. Nhìn nhận việc nghe nhạc tác động đến sức khỏe ở nhiều góc cạnh khác nhau, tìm ra những khác biệt của những người các triệu chứng về sức khỏe tinh thần, để kip thời phát hiện và chữa trị sớm nhất</font>
@@ -1021,7 +1018,7 @@ Biểu đồ Venn cho thấy có sự chồng chéo đáng kể giữa các tìn
 
 - Tần suất trung bình tất cả mọi người với Người Có Mất Ngủ: Những người mất ngủ nghe nhạc video game và Metal với tần suất cao hơn. Điều này có thể chỉ ra rằng họ sử dụng nhạc như một phương tiện để gây ngủ hoặc quản lý căng thẳng liên quan đến tình trạng mất ngủ.
 
-- Tần suất trung bình tất cả mọi người so với Người Có OCD (Rối Loạn Ám Ảnh Cưỡng Chế): Tần suất nghe nhạc Rap và Pop cao hơn đáng kể ở những người có OCD. Có thể nhịp điệu và tính dự đoán trong các thể loại này h resonates hơn với những người nghe có OCD.
+- Tần suất trung bình tất cả mọi người so với Người Có OCD (Rối Loạn Ám Ảnh Cưỡng Chế) dường như không khác nhau. Do đó khó có thể nhận biết được người bị OCD so với người bình thường.
 
 - Xuyên suốt tất cả các biểu đồ, nhạc Gospel thường có tần suất nghe thấp hơn ở những người có các điều kiện này so với dân số tổng thể, có thể cho thấy rằng thể loại này ít được sử dụng hoặc ít hiệu quả như một chiến lược đối phó cho những nhóm cụ thể này.
   </b></font>
@@ -1035,7 +1032,7 @@ Biểu đồ Venn cho thấy có sự chồng chéo đáng kể giữa các tìn
 <font size="+1" color=blue><b>Bước 3: Đánh giá về sở thích âm nhạc của nhóm người này.
 </b></font>
 
-![Gerne](images/Q2-genre_counts.png)
+![Gernecount](images/Q2-genre_counts.png)
 
 <div style="border-radius: 10px; border: 2px solid #51F9F4; padding: 15px; background-color:#c2eeec; font-size: 100%; text-align: left;">
     
@@ -1073,9 +1070,9 @@ Từ biểu đồ tần suất nghe nhạc, chúng đã phát hiện ra rằng:
 
 - Người có triệu chứng lo âu và trầm cảm có xu hướng nghe nhạc Rock và Pop nhiều hơn.
 - Người mất ngủ có xu hướng nghe nhạc video game và Metal nhiều hơn.
-- Người có OCD nghe nhạc Rap và Pop nhiều hơn so với mức trung bình.
+- Người có OCD tần xuất nghe không khác gì so với người bình thường
 
-Từ biểu đồ sở thich âm nhạc của những người có triệu chứng bệnh ta thấy: ở thích âm nhạc cá nhân có liên quan đến triệu chứng tâm thần và có thể phản ánh cách thức mà mỗi người đối phó với tình trạng sức khỏe tâm thần của họ. Thể loại Rock và Pop được yêu thích rộng rãi trong tất cả các nhóm, trong khi các thể loại khác như Metal có thể được ưa chuộng bởi những người trải qua trạng thái cảm xúc sâu sắc hơn. Sự đa dạng trong sở thích âm nhạc cho thấy việc lựa chọn âm nhạc để hỗ trợ sức khỏe tâm thần là một trải nghiệm rất cá nhân và cần phải được cá nhân hóa.
+- Từ biểu đồ sở thich âm nhạc của những người có triệu chứng bệnh ta thấy: ở thích âm nhạc cá nhân có liên quan đến triệu chứng tâm thần và có thể phản ánh cách thức mà mỗi người đối phó với tình trạng sức khỏe tâm thần của họ. Thể loại Rock và Pop được yêu thích rộng rãi trong tất cả các nhóm, trong khi các thể loại khác như Metal có thể được ưa chuộng bởi những người trải qua trạng thái cảm xúc sâu sắc hơn. Sự đa dạng trong sở thích âm nhạc cho thấy việc lựa chọn âm nhạc để hỗ trợ sức khỏe tâm thần là một trải nghiệm rất cá nhân và cần phải được cá nhân hóa.
 
 Biểu đồ về ảnh hưởng của âm nhạc cho thấy:
 
@@ -1083,7 +1080,7 @@ Biểu đồ về ảnh hưởng của âm nhạc cho thấy:
 - Có một tỷ lệ nhỏ người cảm thấy tình trạng của họ xấu đi khi nghe nhạc, đặc biệt là ở nhóm người mất ngủ.
 - Số lượng người không cảm thấy có tác động gì từ âm nhạc cũng khá đáng kể.
 
-=> hững phát hiện này cho thấy âm nhạc có thể đóng vai trò là một công cụ hữu ích trong việc cải thiện tình trạng tâm thần hoặc ít nhất là cung cấp một phương tiện thoải mái và giải trí cho người nghe. Tuy nhiên, cũng có một tỷ lệ nhất định mà âm nhạc không mang lại hiệu quả tích cực hoặc thậm chí có thể làm tình hình tồi tệ hơn, điều này nhấn mạnh tầm quan trọng của việc lựa chọn đúng loại nhạc cho từng cá nhân.
+=> Những phát hiện này cho thấy âm nhạc có thể đóng vai trò là một công cụ hữu ích trong việc cải thiện tình trạng tâm thần hoặc ít nhất là cung cấp một phương tiện thoải mái và giải trí cho người nghe. Tuy nhiên, cũng có một tỷ lệ nhất định mà âm nhạc không mang lại hiệu quả tích cực hoặc thậm chí có thể làm tình hình tồi tệ hơn, điều này nhấn mạnh tầm quan trọng của việc lựa chọn đúng loại nhạc cho từng cá nhân.
 
 Qua đó, nghiên cứu của bạn đã cung cấp cái nhìn sâu sắc về mối liên hệ giữa âm nhạc và sức khỏe tâm thần, đồng thời cũng phản ánh sự khác biệt về sở thích âm nhạc giữa những người có triệu chứng tâm thần so với dân số chung. Những thông tin này có thể hữu ích cho việc phát triển các chương trình can thiệp sức khỏe tâm thần thông qua âm nhạc hoặc chỉ đơn giản là cung cấp kiến thức cho những người đang tìm cách sử dụng âm nhạc để cải thiện tâm trạng của mình.
 
@@ -1123,11 +1120,10 @@ Qua đó, nghiên cứu của bạn đã cung cấp cái nhìn sâu sắc về m
 <div style="border-radius: 10px; border: 2px solid #51F9F4; padding: 15px; background-color:#c2eeec; font-size: 100%; text-align: left;">
     
 <font size="+1" color=#215C67><b>
-Các thể loại như Video game music và Jazz có sự phân bố độ tuổi rộng, chỉ ra rằng chúng được nghe bởi một lượng người nghe đa dạng về tuổi tác.
-Rock và Pop có nhiều điểm ngoại lệ, cho thấy có người nghe ở độ tuổi cao hơn so với phần lớn người nghe thể loại này.
-Thể loại như Classical và Metal có sự phân bố tuổi tương đối hẹp, chỉ ra rằng đối tượng nghe nhạc có xu hướng tập trung vào một nhóm tuổi nhất định.
-Lofi và Gospel có những người nghe ở độ tuổi thấp, dựa vào vị trí của hộp và độ rộng của nó.
-Latin music dường như có số lượng người nghe ít nhất và có phân bố tuổi hạn chế so với các thể loại khác.
+- Các thể loại như Rock, Classical, Metal có sự phân bố độ tuổi rộng, chỉ ra rằng chúng được nghe bởi một lượng người nghe đa dạng về tuổi tác.
+- Thể loại như Rap và Kpop có sự phân bố tuổi tương đối hẹp, chỉ ra rằng đối tượng nghe nhạc có xu hướng tập trung vào một nhóm tuổi nhất định.
+- Gospel hầu như được nghe mới những những người có độ tuổi tên 55 tuổi
+- Latin music dường như có số lượng người nghe ít nhất và có phân bố tuổi hạn chế so với các thể loại khác bởirong khảo sát chỉ ghi nhận được 1 trường hợp thích nghe thể loại nhạc này
 </b></font>
 </div>
 
@@ -1209,7 +1205,7 @@ Nếu không điều trị sớm có thể dẫn đến những hậu quả khó
 <font size="+1" color=#215C67><b>Câu hỏi 4. Số nhịp điệu của dòng dòng nhạc yêu thích có ảnh hưởng tới sức khỏe tinh thần của họ hay không?
 </b></font>
 
-<font color="red"><b>Câu hỏi có lợi ích gì: </b></font> <font color="red"></font>
+<font color="red"><b>Câu hỏi có lợi ích gì: </b></font> <font color="red">Mỗi dòng nhạc có một nhịp điệu riêng, một đặc trưng riêng của loại nhạc đó. Do đó chúng ta phải cần tìm hiểu xem những nhịp điệu của mỗi dòng nhạc có tác động kích thích não, hoặc gây ra tác động tinh thần nào không đối với con người.</font>
 
 <font color="red"><b>Cách trả lời câu hỏi: </b></font>
 <font color="red">
@@ -1271,7 +1267,7 @@ Dựa vào biểu đồ và những dữ liệu chi tiết có thể thấy rõ 
 <div style="border-radius: 10px; border: 2px solid #51F9F4; padding: 15px; background-color:#c2eeec; font-size: 100%; text-align: left;">
     
 <font size="+1" color=#215C67><b>
-- Ở các người tham gia có xu hướng Lo lắng và Trầm Cảm cao dể dàng nhận thấy rằng họ thường nghe những loại nhạc Rock, Rap, Metal,Pop,  R&B, Rap, Rock. Ở mức BPm trên 120 thì họ sẽ có nhiều triệu chứng hơn. Nhưng trái ngược lại họ ít có cảm giác đốt với các triệu chứng Mất ngủ hay OCD.
+- Ở các người tham gia có xu hướng Lo lắng và Trầm Cảm cao dể dàng nhận thấy rằng họ thường nghe những loại nhạc Rock, Rap, Metal,Pop,  R&B. Ở mức BPm trên 120 thì họ sẽ có nhiều triệu chứng hơn. Nhưng trái ngược lại họ ít có cảm giác đốt với các triệu chứng Mất ngủ hay OCD.
 
 - Riêng thể loại nhạc EDM tuy có xung nhịp cao nhưng rất ít người yêu thích thể loại nhạc đó cảm thấy có vấn đề đối với trạng thái tinh thần của mình so với những thể loại nhạc có cùng xung nhịp khác.
   </b></font>
@@ -1329,9 +1325,46 @@ Bước 1: Xử lí dữ liệu đầu vào
 
   ![Anova](images/Q5-Anova.png)
 
-  - Pearson
+<div style="border-radius: 10px; border: 2px solid #51F9F4; padding: 15px; background-color:#c2eeec; font-size: 100%; text-align: left;">
 
-  ![Pearson](images/Q5-Pearson.png)
+<font size="+1" color=#215C67><b>
+
+- Có một sự ảnh hưởng khác biệt lớn giữa các thuộc tính đối với cột mục tiêu, nơi mà cột này ảnh hưởng đánh kể đến vấn đề tâm lý này nhưng không ảnh hưởng đến các triệu chứng tâm lý khác. Dễ thấy ở Nhóm tuổi, Nhóm tuổi có ảnh hưởng lớn đến các vấn đề tâm thần, trong khi đó côt 'While working' dường như không có mức ảnh lớn.
+- Các cột frequency ít nhiều cũng ảnh hưởng đến các cột mực tiêu nhưng không đều và nhiều chô bất hơn lý đối với các triệu chứng "Mất ngủ" hay "OCD".
+- Fav gen cũng cho thấy mức không ảnh hưởng gì đến OCD.
+  </b></font>
+
+<font color="red"><b>
+=> Dựa vào các p-value để xem xét mức ảnh hưởng của các cột đến với cột mục tiêu. Nếu các cột riêng lẻ, ta chưa thấy rõ ràng lắm các sự ảnh hưởng mạnh mẽ của các cột đến với cột mục tiêu. Một câu hỏi đặt ra là nếu kết hợp các cột này lại thì mô hình có cho hiệu suất cao hay không. Cần lựa chọn các cột mục tiêu rõ ràng đối với từng loại vấn đề tâm lý. Khi có sự khác biệt lớn như các cột so với "Lo lắng", "Trầm cảm" và các cột mục tiêu "Mất ngủ", "OCD"
+</b></font>
+
+</div>
+
+- Pearson
+
+![Pearson](images/Q5-Pearson.png)
+
+<div style="border-radius: 10px; border: 2px solid #51F9F4; padding: 15px; background-color:#c2eeec; font-size: 100%; text-align: left;">
+    
+<font size="+1" color=#215C67><b>
+Đối với BPM: 
+- Anxiety: Có p-value là 0.02596, nghĩa là có một mức độ ảnh hưởng thống kê đến anxiety, nhưng mức độ này không quá mạnh vì p-value gần ngưỡng 0.05.
+- Depression, Insomnia: P-value là 0.08, không có bằng chứng đủ để cho thấy BPM ảnh hưởng đáng kể đến depression và insomnia.
+- OCD: P-value là 0.826771, rất cao và cho thấy không có mối quan hệ thống kê giữa BPM và OCD.
+
+Đối với cột Hours Per Day:
+
+- Anxiety: P-value là 0.075563, không có bằng chứng thống kê đáng kể cho ảnh hưởng đến anxiety.
+- Depression: P-value là 0.021511, cho thấy có một mức độ ảnh hưởng thống kê đáng kể đến depression.
+- Insomnia: P-value rất thấp là 0.000435, cho thấy có mối quan hệ thống kê rất mạnh giữa số giờ nghe nhạc mỗi ngày và insomnia.
+- OCD: P-value là 0.00153, chỉ ra rằng số giờ nghe nhạc mỗi ngày cũng có mối quan hệ thống kê mạnh với OCD
+  </b></font>
+
+<font color="red"><b>
+=> Tương tự như các biến phân loại, các biến số cũng có mức ảnh hưởng nhất định đến các cột mục tiêu. Nhưng không phải bệnh nào cũng ảnh hưởng như nhau. Ví dự như OCD bị ảnh hưởng bởi số giờ nghe nhạc nhưng không có bất kỳ ảnh hưởng đến từ bpm (nhịp điệu). Do đó khi đưa vào các mô hình học máy cần phải chọn lựa đặc trưng
+</b></font>
+
+</div>
 
 ## Tác giả
 
