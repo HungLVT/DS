@@ -560,13 +560,61 @@ Dựa vào biểu đồ và những dữ liệu chi tiết có thể thấy rõ 
 
 </div>
 
+<div style="border-radius: 10px; border: 2px solid #51F9F4; padding: 15px; background-color:#c2eeec; font-size: 100%; text-align: left;">
+    
+<font size="+1" color=#215C67><b>Câu hỏi 5. Mức độ ảnh hưởng của các thuộc tính dữ liệu đến với các vấn đề tâm lý ở mức độ như thế nào?
+</b></font>
+
+<font color="red"><b>Câu hỏi có lợi ích gì: </b></font> <font color="red">Qua các câu hỏi trên, phần nào đã định hình được mức độ ảnh hưởng của âm nhạc lên sức khỏe tinh thần của chúng ta. Nhưng để hiểu chính xác mức độ ảnh hưởng lớn như thế nào ta cần phải minh họa trực quan bằng những con số, cái mà những mô hình dựa vào đó để dự đoán cột mục tiêu</font>
+
+<font color="red"><b>Cách trả lời câu hỏi: </b></font>
+<font color="red">
+
+- Có 4 bước:
+
+  - _Bước 1_: Xử lí dữ liệu đầu vào
+
+  - _Bước 2_: Trích xuất các cột số và cột phân loại để đánh giá
+
+  - _Bước 3_: Tiến hành đánh giá
+
+</font>
+
+</div>
+
+<font size="+1" color=blue><b>Bước 1: Xử lí dữ liệu đầu vào
+</b></font>
+
+- Tiến hành đưa các cột dữ liệu đánh giá mức độ các triệu chứng về kiểu int, cột nhóm tuổi về kiểu object.
+
+- Loại bỏ các cột không cần thiết: `'Age', 'Fav gerne encoded'`
+
+- Chuẩn hóa lại tên các cột.
+
+<font size="+1" color=blue><b>Bước 2: Trích xuất các cột số và cột phân loại để đánh giá
+</b></font>
+
+![Q5-Trích xuất](images/Q5-Trich-xuat.png)
+
+<font size="+1" color=blue><b>Bước 3: Tiến hành đánh giá
+</b></font>
+
+- Sau khi đánh giá bằng cách phương pháp Anova, Pearson lần lượt cho các cột phân loại và cột số, nhóm thu được kết quả như sau:
+
+  - Anova
+
+  ![Anova](images/Q5-Anova.png)
+
+  - Pearson
+
+  ![Pearson](images/Q5-Pearson.png)
+
 ## Tác giả
 
-- [Nhóm 22](https://github.com/HungLVT/NMKHDL.git)
+- [Nhóm 9] (https://github.com/HungLVT/DS.git)
 
 ## Liên hệ
 
 - [Nguyễn Văn Quang Hưng]
 - [Huỳnh Trí Nhân]
 - [Chiêm Bỉnh Nguyên]
-- [Huỳnh Thị Kiều Hoa]
