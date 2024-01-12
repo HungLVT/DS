@@ -111,7 +111,7 @@
 
 <font color="red">
 
-- Có 3 bước:
+- Có 4 bước:
 
   - _Bước 1_: Xem xét sự phân bố của từng loại triệu chứng tâm lý trong từng loại bệnh.
 
@@ -255,7 +255,7 @@ Biểu đồ Venn cho thấy có sự chồng chéo đáng kể giữa các tìn
 <font color="red"><b>Cách trả lời câu hỏi: </b></font>
 <font color="red">
 
-- Có 3 bước:
+- Có 4 bước:
 
   - _Bước 1_: Đánh giá số giờ nghe nhạc của những người có mức độ của các triệu chứng cao so với những người còn lại.
 
@@ -492,7 +492,7 @@ Nếu không điều trị sớm có thể dẫn đến những hậu quả khó
 <font color="red"><b>Cách trả lời câu hỏi: </b></font>
 <font color="red">
 
-- Có 4 bước:
+- Có 3 bước:
 
   - _Bước 1_: Vẽ histogram các mức BPM, thống kê BPM trung bình của các dòng nhạc
 
@@ -570,7 +570,7 @@ Dựa vào biểu đồ và những dữ liệu chi tiết có thể thấy rõ 
 <font color="red"><b>Cách trả lời câu hỏi: </b></font>
 <font color="red">
 
-- Có 4 bước:
+- Có 3 bước:
 
   - _Bước 1_: Xử lí dữ liệu đầu vào
 
@@ -582,7 +582,9 @@ Dựa vào biểu đồ và những dữ liệu chi tiết có thể thấy rõ 
 
 </div>
 
-<font size="+1" color=blue><b>Bước 1: Xử lí dữ liệu đầu vào
+<font size="+1" color=blue><b>
+
+Bước 1: Xử lí dữ liệu đầu vào
 </b></font>
 
 - Tiến hành đưa các cột dữ liệu đánh giá mức độ các triệu chứng về kiểu int, cột nhóm tuổi về kiểu object.
