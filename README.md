@@ -106,6 +106,717 @@
 
 ### 3. Khám phá dữ liệu
 
+Nhóm sẽ thống kê theo từng cột để xem đặc trưng của cột đồng thời cũng xem xét đến các mối tương quan của các cột đó
+
+#### 3.1 Thống kê về tuổi
+
+Nhóm vẽ hai biểu đồ cột và boxplot để có cái nhìn trực quan nhất về độ tuổi của các đáp viên
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>count</td>
+      <td>666.000000</td>
+    </tr>
+    <tr>
+      <td>mean</td>
+      <td>25.252252</td>
+    </tr>
+    <tr>
+      <td>std</td>
+      <td>11.828322</td>
+    </tr>
+    <tr>
+      <td>min</td>
+      <td>10.000000</td>
+    </tr>
+    <tr>
+      <td>25%</td>
+      <td>18.000000</td>
+    </tr>
+    <tr>
+      <td>50%</td>
+      <td>21.000000</td>
+    </tr>
+    <tr>
+      <td>75%</td>
+      <td>28.000000</td>
+    </tr>
+    <tr>
+      <td>max</td>
+      <td>80.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+![Age1](images/3.0-1-age-distribution.png)
+
+![Age2](images/3.0-1-age-boxplot.png)
+
+- Dựa vào biểu đồ boxplot và histogram. Chúng ta có thể thấy đa phần độ tuổi tham gia khảo sát đều ở độ tuổi từ 15 đến 23 tuổi.
+- Độ tuổi thấp nhất tham gia khảo sát là 10 tuổi và cao nhất là 80 tuổi.
+- Độ tuôi trung bình tham gia khảo sát là 25 tuổi.
+
+#### 3.2 Thống kê về dịch vụ nghe nhạc
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Dịch vụ</th>
+      <th>Số lượng</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Spotify</td>
+      <td>412</td>
+    </tr>
+    <tr>
+      <td>YouTube Music</td>
+      <td>87</td>
+    </tr>
+    <tr>
+      <td>I do not use a streaming service.</td>
+      <td>63</td>
+    </tr>
+    <tr>
+      <td>Apple Music</td>
+      <td>47</td>
+    </tr>
+    <tr>
+      <td>Other streaming service</td>
+      <td>47</td>
+    </tr>
+    <tr>
+      <td>Pandora</td>
+      <td>10</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+![service1](images/3.0-2-streaming-service.png)
+
+- Dịch vụ nghe nhạc của Spotify được nhiều người sử dụng nhất và chiếm phần lớn trong khảo sát với 62.01%
+- Các dịch vụ nghe nhạc còn lại không chênh lệch nhiều, chỉ có Pandora là dịch vụ được sử dụng ít nhất, với 1.22%
+
+**Độ tuổi nghe nhạc trên các nền tảng là gì ? Trên mỗi nền tảng độ tuổi nghe nhạc có khác nhau không?**
+
+![service1](images/3.0-2-streaming-service-by-age.png)
+
+#### 3.3 Thống kê về số giờ nghe
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Hours per day</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>count</td>
+      <td>666.000000</td>
+    </tr>
+    <tr>
+      <td>mean</td>
+      <td>3.027027</td>
+    </tr>
+    <tr>
+      <td>std</td>
+      <td>2.014800</td>
+    </tr>
+    <tr>
+      <td>min</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <td>25%</td>
+      <td>2.000000</td>
+    </tr>
+    <tr>
+      <td>50%</td>
+      <td>3.000000</td>
+    </tr>
+    <tr>
+      <td>75%</td>
+      <td>4.000000</td>
+    </tr>
+    <tr>
+      <td>max</td>
+      <td>9.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+![Hours1](images/3.0-3-hours-per-day-distribution.png)
+
+- Số giờ mà các đáp viên nghe nhạc nhiều nhất là 2 giờ, ít nhất là 9 giờ
+- Số giờ có xu hướng giảm từ 3 giờ đến 9 giờ và từ 2 giờ dến 0 giờ
+
+#### 3.4 Thống kê về thể loại âm nhạc yêu thích
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Thể loại yêu thích</th>
+      <th>Số lượng</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Rock</td>
+      <td>167</td>
+    </tr>
+    <tr>
+      <td>Pop</td>
+      <td>111</td>
+    </tr>
+    <tr>
+      <td>Metal</td>
+      <td>77</td>
+    </tr>
+    <tr>
+      <td>Classical</td>
+      <td>50</td>
+    </tr>
+    <tr>
+      <td>Video game music</td>
+      <td>41</td>
+    </tr>
+    <tr>
+      <td>R&amp;B</td>
+      <td>34</td>
+    </tr>
+    <tr>
+      <td>Hip hop</td>
+      <td>32</td>
+    </tr>
+    <tr>
+      <td>EDM</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <td>Folk</td>
+      <td>29</td>
+    </tr>
+    <tr>
+      <td>Country</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <td>K pop</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <td>Rap</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <td>Jazz</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <td>Lofi</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>Gospel</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>Latin</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+![favgenres1](images/3.0-4-genre-distribution.png)
+
+- Thể loại nhạc được yêu thích nhiều nhất là Rock, và ít nhất là Latin với Gospel
+
+**Chúng ta tiếp tục khám phá xem thể loại nhạc yêu thích khác nhau theo độ tuổi và BPM của các thế loại đó**
+
+![favgenres2](images/3.0-4-genre-age.png)
+
+- Nhạc Kpop, Rap và nhạc Latin được các đáp viên trẻ yêu thích nhiều nhất
+- Đối với các đáp viên lớn tuổi thì là nhạc Gospel
+- Các thể loại nhạc còn lại không có khác biệt nhiều
+
+![favgenres3](images/3.0-4-genre-bpm.png)
+
+- BPM của thể loại EDM và Mental ở mức khá cao và cao nhất trong các thể loại nhạc
+- Thể loại Gospel có mức BPM trải khá , chứa cả mức BPM thấp nhất
+- Mức BPM trung bình thấp nhất là của thể loại Country
+
+#### 3.5 Khám phá các cột Yes/No
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>While working</th>
+      <th>Composer</th>
+      <th>Instrumentalist</th>
+      <th>Exploratory</th>
+      <th>Foreign languages</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>No</th>
+      <td>146</td>
+      <td>557</td>
+      <td>452</td>
+      <td>196</td>
+      <td>304</td>
+    </tr>
+    <tr>
+      <th>Yes</th>
+      <td>520</td>
+      <td>109</td>
+      <td>214</td>
+      <td>470</td>
+      <td>362</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+![yesno](images/3.0-5-yes_no.png)
+
+- Hơn 78% người tham gia khảo sát nghe nhạc lúc đang làm việc
+- Hầu hết mọi người chưa bao giờ sáng tạc nhạc, với hơn 83% chọn No
+- Hơn 67% đã từng chơi nhạc cụ gần đây
+- Khoảng 70% mọi người có xu hướng khám phá thêm các tác giả và thể loại nhạc mới
+- Số lượng người có nghe nhạc nước ngoài tương đương với người không nghe, 46 so với 54%
+
+#### 3.6 Tần suất nghe của từng thể loại nhạc
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Never</th>
+      <th>Rarely</th>
+      <th>Sometimes</th>
+      <th>Very frequently</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Classical</th>
+      <td>149</td>
+      <td>236</td>
+      <td>179</td>
+      <td>102</td>
+    </tr>
+    <tr>
+      <th>Country</th>
+      <td>307</td>
+      <td>214</td>
+      <td>99</td>
+      <td>46</td>
+    </tr>
+    <tr>
+      <th>EDM</th>
+      <td>279</td>
+      <td>177</td>
+      <td>132</td>
+      <td>78</td>
+    </tr>
+    <tr>
+      <th>Folk</th>
+      <td>265</td>
+      <td>200</td>
+      <td>133</td>
+      <td>68</td>
+    </tr>
+    <tr>
+      <th>Gospel</th>
+      <td>482</td>
+      <td>123</td>
+      <td>47</td>
+      <td>14</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+![frequency](images/3.0-6-genre-frequency.png)
+
+- Nhạc Rock là nhạc có số lượng nghe thường xuyên nhiều nhất, ít nhấy là Gospel
+- Nhạc Gospel là nhạc có số người chưa bao giờ nghe là nhiều nhất, với nhạc Pop thì hầu như là ai cũng đã từng nghe
+
+#### 3.7 Việc nghe nhạc có cải thiện sức khoẻ tinh thần không ?
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Ảnh hưởng</th>
+      <th>Số lượng</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Improve</td>
+      <td>495</td>
+    </tr>
+    <tr>
+      <td>No effect</td>
+      <td>155</td>
+    </tr>
+    <tr>
+      <td>Worsen</td>
+      <td>16</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+![musiceffect](images/3.0-7-music-effects.png)
+
+- Gần 3/4 số người tham gia khảo sát cho rằng việc nghe nhạc cải thiện được sức khoẻ tinh thần của họ
+- Khoảng 23% cho biết rằng nghe nhạc không ảnh hưởng gì
+- Và Có 2.43% những người tham gia khảo sát cảm thấy việc nghe nhạc đã làm cho tình trạng của họ tệ hơn
+
+#### 3.8 Mức độ bệnh của những người tham gia khảo sát
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Mức độ</th>
+      <th>OCD</th>
+      <th>Anxiety</th>
+      <th>Depression</th>
+      <th>Insomnia</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>223</td>
+      <td>30</td>
+      <td>74</td>
+      <td>137</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>88</td>
+      <td>28</td>
+      <td>38</td>
+      <td>78</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>88</td>
+      <td>42</td>
+      <td>83</td>
+      <td>79</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>59</td>
+      <td>62</td>
+      <td>54</td>
+      <td>62</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>46</td>
+      <td>48</td>
+      <td>56</td>
+      <td>56</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>46</td>
+      <td>53</td>
+      <td>54</td>
+      <td>48</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>30</td>
+      <td>81</td>
+      <td>80</td>
+      <td>55</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>29</td>
+      <td>109</td>
+      <td>88</td>
+      <td>56</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>24</td>
+      <td>105</td>
+      <td>72</td>
+      <td>46</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>14</td>
+      <td>47</td>
+      <td>33</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>19</td>
+      <td>61</td>
+      <td>34</td>
+      <td>28</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+![healthissues](images/3.0-8-health-issues.png)
+
+- Hầu hết mọi người đều không bị OCD, bị Mất ngủ ở mức nhẹ, và Lo lắng ở mức khá cao
+- Mức độ trầm cảm được trải đều, cao nhất là ở mức 7
+
+#### 3.9 Độ tương quan giữa các cột numeric(cột số)
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Age</th>
+      <th>Hours per day</th>
+      <th>BPM</th>
+      <th>Anxiety</th>
+      <th>Depression</th>
+      <th>Insomnia</th>
+      <th>OCD</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Age</th>
+      <td>1.000000</td>
+      <td>-0.080485</td>
+      <td>-0.023908</td>
+      <td>-0.169020</td>
+      <td>-0.104194</td>
+      <td>0.032421</td>
+      <td>-0.124796</td>
+    </tr>
+    <tr>
+      <th>Hours per day</th>
+      <td>-0.080485</td>
+      <td>1.000000</td>
+      <td>-0.045530</td>
+      <td>0.068906</td>
+      <td>0.089070</td>
+      <td>0.135926</td>
+      <td>0.122564</td>
+    </tr>
+    <tr>
+      <th>BPM</th>
+      <td>-0.023908</td>
+      <td>-0.045530</td>
+      <td>1.000000</td>
+      <td>0.086288</td>
+      <td>0.066337</td>
+      <td>0.065990</td>
+      <td>-0.008496</td>
+    </tr>
+    <tr>
+      <th>Anxiety</th>
+      <td>-0.169020</td>
+      <td>0.068906</td>
+      <td>0.086288</td>
+      <td>1.000000</td>
+      <td>0.510855</td>
+      <td>0.287339</td>
+      <td>0.341362</td>
+    </tr>
+    <tr>
+      <th>Depression</th>
+      <td>-0.104194</td>
+      <td>0.089070</td>
+      <td>0.066337</td>
+      <td>0.510855</td>
+      <td>1.000000</td>
+      <td>0.366144</td>
+      <td>0.177163</td>
+    </tr>
+    <tr>
+      <th>Insomnia</th>
+      <td>0.032421</td>
+      <td>0.135926</td>
+      <td>0.065990</td>
+      <td>0.287339</td>
+      <td>0.366144</td>
+      <td>1.000000</td>
+      <td>0.236582</td>
+    </tr>
+    <tr>
+      <th>OCD</th>
+      <td>-0.124796</td>
+      <td>0.122564</td>
+      <td>-0.008496</td>
+      <td>0.341362</td>
+      <td>0.177163</td>
+      <td>0.236582</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+![corr](images/3.0-9-correlation.png)
+
+Dường như các cột số trong dữ liệu không có sự tương quan nào với nhau, chỉ số tương quan cao nhất là 0.51, và các chỉ số còn lại luôn rất thấp
+
 ### 4. Đặt câu hỏi về bộ dữ liệu và trả lời
 
 <div style="border-radius: 10px; border: 2px solid #51F9F4; padding: 15px; background-color:#c2eeec; font-size: 100%; text-align: left;">
