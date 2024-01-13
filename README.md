@@ -2,9 +2,9 @@
 
 <div style="color: red; font-size: 20px; font-weight: bold;">Người thực hiện: Nhóm 9
 
-- [Nguyễn Văn Quang Hưng]
-- [Huỳnh Trí Nhân]
-- [Chiêm Bỉnh Nguyên]
+- [Nguyễn Văn Quang Hưng] 21120247
+- [Huỳnh Trí Nhân] 21120302
+- [Chiêm Bỉnh Nguyên] 21120298
 </div>
 
 ## Giới thiệu đồ án
@@ -52,15 +52,15 @@
 
     2.1. Xóa những cột không cần thiết: Một số cột dữ liệu không có nhiều giá trị trong quá trình phân tích của nhóm sẽ được loại bỏ.
 
-- Một số cột bị loại bỏ là : `'Timestamp', 'Permissions'.`
+  - Một số cột bị loại bỏ là : `'Timestamp', 'Permissions'.`
 
-  2.2. Xử lý dữ liệu theo cột
+    2.2. Xử lý dữ liệu theo cột
 
-- Nhóm sẽ tiến hành đưa các cột điểm đánh giá mức độ nghiêm trọng của các triệu chứng, số giờ nghe nhạc về kiểu int.
+  - Nhóm sẽ tiến hành đưa các cột điểm đánh giá mức độ nghiêm trọng của các triệu chứng, số giờ nghe nhạc về kiểu int.
 
-=> Sau đó kiểm tra dữ liệu trùng lặp và xóa nó đi.
+  => Sau đó kiểm tra dữ liệu trùng lặp và xóa nó đi.
 
-2.3. Xử lý dữ liệu nhiễu và thiếu
+  2.3. Xử lý dữ liệu nhiễu và thiếu
 
 - Kiểm tra dữ liệu bị thiếu
 
@@ -166,7 +166,7 @@ Nhóm thống kê dữ liệu theo từng cột, để tìm ra đặc trưng c�
 </table>
 </div>
 
-Nhóm vẽ hai biểu đồ cột và boxplot để có cái nhìn trực quan nhất về độ tuổi của các đáp viên
+Nhóm vẽ hai biểu đồ countplot và boxplot để có cái nhìn trực quan nhất về độ tuổi của các người tham gia khảo sát.
 
 ![Age1](images/3.0-1-age-distribution.png)
 
@@ -174,7 +174,7 @@ Nhóm vẽ hai biểu đồ cột và boxplot để có cái nhìn trực quan n
 
 - Dựa vào biểu đồ boxplot và countplot. Chúng ta có thể thấy đa phần độ tuổi tham gia khảo sát đều ở độ tuổi từ 18 đến 28 tuổi.
 - Độ tuổi thấp nhất tham gia khảo sát là 10 tuổi và cao nhất là 80 tuổi.
-- Độ tuổi trung bình tham gia khảo sát là 25 tuổi.
+- Độ tuổi trung bình tham gia khảo sát là 21 - 23 tuổi.
 
 #### 3.2 Thống kê về dịch vụ nghe nhạc
 
@@ -231,8 +231,8 @@ Nhóm vẽ hai biểu đồ cột và boxplot để có cái nhìn trực quan n
 
 ![service1](images/3.0-2-streaming-service.png)
 
-- Dịch vụ nghe nhạc của Spotify được nhiều người sử dụng nhất và chiếm phần lớn trong khảo sát với 62.01%
-- Các dịch vụ nghe nhạc còn lại không chênh lệch nhiều, chỉ có Pandora là dịch vụ được sử dụng ít nhất, với 1.22%
+- Dịch vụ nghe nhạc của Spotify được nhiều người sử dụng nhất và chiếm phần lớn trong khảo sát với hơn 60%
+- Các dịch vụ nghe nhạc còn lại không chênh lệch nhiều, chỉ có Pandora là dịch vụ được sử dụng ít nhất, chỉ khoảng 1%
 
 **Độ tuổi nghe nhạc trên các nền tảng là gì ? Trên mỗi nền tảng độ tuổi nghe nhạc có khác nhau không?**
 
@@ -302,7 +302,7 @@ Nhóm vẽ hai biểu đồ cột và boxplot để có cái nhìn trực quan n
 ![Hours1](images/3.0-3-hours-per-day-distribution.png)
 
 - Số giờ mà các đáp viên nghe nhạc nhiều nhất là 2 giờ, ít nhất là 9 giờ
-- Số giờ có xu hướng giảm từ 3 giờ đến 9 giờ và từ 2 giờ dến 0 giờ
+- Số giờ có xu hướng giảm từ 3 giờ đến 9 giờ và từ 2 giờ đến 0 giờ
 
 #### 3.4 Thống kê về thể loại âm nhạc yêu thích
 
@@ -405,7 +405,7 @@ Nhóm vẽ hai biểu đồ cột và boxplot để có cái nhìn trực quan n
 
 ![favgenres2](images/3.0-4-genre-age.png)
 
-- Nhạc Kpop, Rap và nhạc Latin được các đáp viên trẻ yêu thích nhiều nhất
+- Nhạc Kpop, Rap được các đáp viên trẻ yêu thích nhiều nhất
 - Đối với các đáp viên lớn tuổi thì là nhạc Gospel
 - Các thể loại nhạc còn lại không có khác biệt nhiều
 
@@ -820,7 +820,7 @@ Dường như các cột số trong dữ liệu không có sự tương quan nà
   
 <div style="border-radius: 10px; border: 2px solid #51F9F4; padding: 15px; background-color:#c2eeec; font-size: 100%; text-align: left;">
     
-<font size="+1" color=#215C67><b>Câu 1:  Vấn đề về sức khỏe tinh thần của những người tham gia như thế nào ? Vấn đề này có đáng loại không?  </b></font>
+<font size="+1" color=#215C67><b>Câu 1:  Vấn đề về sức khỏe tinh thần của những người tham gia như thế nào ? Vấn đề này có đáng lo ngại không?  </b></font>
 
 <font color="red"><b>Câu hỏi có lợi ích gì: </b></font> <font color="red">Bộ dữ liệu nghiên cứu về sự tác động của âm nhạc đến với những vấn đề sức khỏe tâm lý như: Lo lắng, trầm cảm, mất ngủ và rồi loạn cưỡng chế. Do việc xem những vấn đế này có tác động đến những người tham gia là điều đáng quan tâm. Liệu những vấn đề này có tiềm tàng trong chúng ta hay không và với tỉ lệ như thế nào? Nếu lớn quá thì có đáng tâm hay không? </font>
 
